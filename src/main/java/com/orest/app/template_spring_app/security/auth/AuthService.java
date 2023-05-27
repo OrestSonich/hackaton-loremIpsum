@@ -32,6 +32,7 @@ public class AuthService {
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
                 .email(request.getEmail())
+                .age(request.getAge())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(RolesEnum.USER)
                 .createdAt(Date.valueOf(LocalDate.now()))
