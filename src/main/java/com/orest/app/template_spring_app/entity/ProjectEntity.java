@@ -18,7 +18,7 @@ public class ProjectEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int hours;
-    private String project;
+    private String projectName;
     private String user;
 
     @ManyToOne

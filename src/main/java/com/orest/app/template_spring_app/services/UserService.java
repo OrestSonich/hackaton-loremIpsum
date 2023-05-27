@@ -1,4 +1,4 @@
-package com.orest.app.template_spring_app.service;
+package com.orest.app.template_spring_app.services;
 
 import com.orest.app.template_spring_app.entity.UserEntity;
 import com.orest.app.template_spring_app.model.UserModel;

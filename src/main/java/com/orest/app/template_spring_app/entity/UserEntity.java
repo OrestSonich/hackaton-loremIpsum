@@ -35,6 +35,9 @@ public class UserEntity implements UserDetails {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<RoleEntity> roles;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    private List<ProjectEntity> projects;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
@@ -43,7 +46,7 @@ public class UserEntity implements UserDetails {
 
     @Override
     public String getUsername() {
-        return null;                // todo configure
+        return email;                // todo configure
     }
 
     @ToString.Include(name = "password")

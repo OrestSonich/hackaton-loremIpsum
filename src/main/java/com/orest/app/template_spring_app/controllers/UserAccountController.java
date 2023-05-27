@@ -1,6 +1,6 @@
 package com.orest.app.template_spring_app.controllers;
 
-import com.orest.app.template_spring_app.service.UserService;
+import com.orest.app.template_spring_app.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

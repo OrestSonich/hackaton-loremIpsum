@@ -1,9 +1,7 @@
 package com.orest.app.template_spring_app.services;
 
-import com.orest.app.template_spring_app.entity.ProjectEntity;
 import com.orest.app.template_spring_app.entity.RangEntity;
-import com.orest.app.template_spring_app.pojo.ProjectModel;
-import com.orest.app.template_spring_app.pojo.RangModel;
+import com.orest.app.template_spring_app.model.RangModel;
 import com.orest.app.template_spring_app.repository.RangRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

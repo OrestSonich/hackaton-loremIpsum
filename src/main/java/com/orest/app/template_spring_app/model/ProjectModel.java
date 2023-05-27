@@ -1,7 +1,10 @@
-package com.orest.app.template_spring_app.pojo;
+package com.orest.app.template_spring_app.model;
 
 import com.orest.app.template_spring_app.entity.ProjectEntity;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class ProjectModel {
@@ -14,8 +17,13 @@ public class ProjectModel {
         ProjectModel model = new ProjectModel();
         model.setId(entity.getId());
         model.setHours(entity.getHours());
-        model.setProject(entity.getProject());
+        model.setProject(entity.getProjectName());
         model.setUser(entity.getUser());
         return model;
+    }
+
+    public static List<ProjectModel> toModel(List<ProjectEntity> entityList){
+        List<ProjectModel> modelList = new ArrayList<>();
+        return null;
     }
 }

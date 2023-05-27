@@ -1,4 +1,4 @@
-package com.orest.app.template_spring_app.pojo;
+package com.orest.app.template_spring_app.model;
 
 import com.orest.app.template_spring_app.entity.RangEntity;
 import lombok.Data;

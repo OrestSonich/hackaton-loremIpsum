@@ -1,9 +1,12 @@
 package com.orest.app.template_spring_app.model;
 
+import com.orest.app.template_spring_app.entity.ProjectEntity;
 import com.orest.app.template_spring_app.entity.UserEntity;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 public class UserModel {
@@ -13,6 +16,7 @@ public class UserModel {
     private int age;
     private Date createdAt;
     private Date updatedAt;
+    private List<ProjectModel> projects;
 
     public static UserModel toModel(UserEntity entity){
         UserModel model = new UserModel();
@@ -21,6 +25,7 @@ public class UserModel {
         model.setAge(entity.getAge());
         model.setCreatedAt(entity.getCreatedAt());
         model.setUpdatedAt(entity.getUpdatedAt());
+        model.setProjects(entity.getProjects().stream().map(ProjectModel::toModel).collect(Collectors.toList()));
         return model;
     }
 }
