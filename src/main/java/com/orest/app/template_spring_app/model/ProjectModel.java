@@ -15,6 +15,8 @@ public class ProjectModel {
     private Date createdAt;
     private Date updatedAt;
     private String category;
+    private String address;
+
     public static ProjectModel toModel(ProjectEntity entity){
         ProjectModel model = new ProjectModel();
         model.setId(entity.getId());
@@ -23,6 +25,7 @@ public class ProjectModel {
         model.setCreatedAt(entity.getCreatedAt());
         model.setUpdatedAt(entity.getUpdatedAt());
         model.setCategory(entity.getCategory());
+        model.setAddress(entity.getAddress());
         return model;
     }
 

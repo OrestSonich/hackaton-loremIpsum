@@ -20,6 +20,7 @@ public class ProjectEntity {
     private int hours;
     private String projectName;
     private String category;
+    private String address;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

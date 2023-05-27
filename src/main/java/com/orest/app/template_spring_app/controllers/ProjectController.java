@@ -2,7 +2,6 @@ package com.orest.app.template_spring_app.controllers;
 
 import com.orest.app.template_spring_app.entity.ProjectEntity;
 import com.orest.app.template_spring_app.services.ProjectService;
-import com.orest.app.template_spring_app.services.RangService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
