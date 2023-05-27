@@ -1,6 +1,7 @@
 package com.orest.app.template_spring_app.model;
 
 import com.orest.app.template_spring_app.entity.ProjectEntity;
+import com.orest.app.template_spring_app.entity.RangEntity;
 import com.orest.app.template_spring_app.entity.UserEntity;
 import lombok.Data;
 
@@ -17,6 +18,7 @@ public class UserModel {
     private Date createdAt;
     private Date updatedAt;
     private List<ProjectModel> projects;
+    private List<RangModel> rangs;
 
     public static UserModel toModel(UserEntity entity){
         UserModel model = new UserModel();
@@ -26,6 +28,7 @@ public class UserModel {
         model.setCreatedAt(entity.getCreatedAt());
         model.setUpdatedAt(entity.getUpdatedAt());
         model.setProjects(entity.getProjects().stream().map(ProjectModel::toModel).collect(Collectors.toList()));
+        model.setRangs(entity.getRangs().stream().map(RangModel::toModel).collect(Collectors.toList()));
         return model;
     }
 }

@@ -1,5 +1,6 @@
 package com.orest.app.template_spring_app.entity;
 
+import com.orest.app.template_spring_app.enums.RangEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,8 +18,8 @@ public class RangEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String rang;
-
+    @Enumerated(value = EnumType.STRING)
+    private RangEnum rang = RangEnum.BEGINNER_VOLUNTEER;
     @ManyToOne
     @JoinColumn(name = "rang_id")
     private UserEntity owner;

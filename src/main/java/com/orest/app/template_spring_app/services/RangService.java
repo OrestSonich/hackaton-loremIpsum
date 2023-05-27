@@ -17,10 +17,10 @@ public class RangService {
 
     @Autowired
     private RangRepo rangRepo;
-
+    @Autowired
     private UserRepo userRepo;
 
-    public RangModel addCosts(RangEntity rangs, Long id) {
+    public RangModel addRang(RangEntity rangs, Long id) {
         rangs.setCreatedAt(Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300"))));
         UserEntity user = userRepo.findById(id).
                 orElseThrow();

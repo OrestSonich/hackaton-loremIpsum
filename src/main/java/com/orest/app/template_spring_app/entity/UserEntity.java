@@ -38,6 +38,9 @@ public class UserEntity implements UserDetails {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<ProjectEntity> projects;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    private List<RangEntity> rangs;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
