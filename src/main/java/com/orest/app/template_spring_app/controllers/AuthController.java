@@ -5,6 +5,7 @@ import com.orest.app.template_spring_app.security.auth.AuthService;
 import com.orest.app.template_spring_app.security.auth.AuthenticationResponse;
 import com.orest.app.template_spring_app.security.auth.AuthRequest;
 import com.orest.app.template_spring_app.security.auth.RegisterRequest;
+import com.orest.app.template_spring_app.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class AuthController {
     private final AuthService service;
+    private UserService userService;
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
@@ -29,5 +31,9 @@ public class AuthController {
     ) {
         return ResponseEntity.ok(service.authenticate(request));
     }
-
+    @CrossOrigin
+    @GetMapping("/user")
+    public ResponseEntity getUserById(){
+        return ResponseEntity.ok(userService.getOneByEmail("test@gmail.com"));
+    }
 }
