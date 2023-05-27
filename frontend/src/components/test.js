@@ -1,8 +1,8 @@
-import '../stylesheets/login.css';
-import Register from "../pages/register";
+import '../stylesheets/profile.css';
+import Profile from "../pages/profile";
 const Test =() => {
     return(
-            <Register/>
+            <Profile/>
     )
 }
 export default Test
