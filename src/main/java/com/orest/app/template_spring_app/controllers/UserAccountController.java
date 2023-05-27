@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/")
 @RequiredArgsConstructor
-@CrossOrigin
+
 public class UserAccountController {
 
-    @Autowired
     private UserService service;
 
+    @CrossOrigin
     @GetMapping("/user/")
     public ResponseEntity getUserById(@RequestParam String username){
         return ResponseEntity.ok(service.getOneByEmail(username));
