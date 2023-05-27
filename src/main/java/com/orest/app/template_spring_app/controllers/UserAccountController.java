@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/")
 @RequiredArgsConstructor
-
+@CrossOrigin
 public class UserAccountController {
-
+    @Autowired
     private UserService service;
 
     @CrossOrigin

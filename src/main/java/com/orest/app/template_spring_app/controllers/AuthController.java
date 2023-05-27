@@ -7,6 +7,7 @@ import com.orest.app.template_spring_app.security.auth.AuthRequest;
 import com.orest.app.template_spring_app.security.auth.RegisterRequest;
 import com.orest.app.template_spring_app.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class AuthController {
     private final AuthService service;
+    @Autowired
     private UserService userService;
 
     @PostMapping("/register")
