@@ -1,6 +1,5 @@
 import {useState} from "react"
 import axios from "axios";
-import {Navigate} from "react-router-dom";
 
 import {setAuthToken} from "../../http/setAuthToken";
 const Login = () => {
@@ -9,11 +8,11 @@ const Login = () => {
 
     const handleSubmit = (e,email,password) => {
         e.preventDefault()
-        const loginPayload = {
-            email: email,
-            password: password
-        }
         if(email && password) {
+            const loginPayload = {
+                email: email,
+                password: password
+            }
             axios.post("https://hackaton-app.herokuapp.com/api/v1/auth/authenticate",loginPayload)
                 .then(response => {
                     const token = response.data.token;

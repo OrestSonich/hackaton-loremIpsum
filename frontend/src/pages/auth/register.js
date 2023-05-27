@@ -11,10 +11,10 @@ const Register = () => {
 
     const handleSubmit = (e,email,password1,password2,fistName,secondName,age) => {
         e.preventDefault()
-        if(email && password1 === password2 && password1 && password2 && firstName && secondName) {
+        if(email && password1 === password2 && password1 && password2 && firstName && secondName && age) {
             const registerPayload = {
-                age: parseInt(age),
-                fistName:fistName,
+                age: age,
+                firstName:fistName,
                 lastName:secondName,
                 email: email,
                 password: password1,
@@ -40,7 +40,7 @@ const Register = () => {
                 <label>Last Name:</label>
                 <input type="text" placeholder="Zlotazec" value={secondName} onChange={(e) => setSecondName(e.target.value)}/>
                 <label>Age:</label>
-                <input type="number" placeholder="18" value={age} onChange={(e) => setAge(e.target.value)}/>
+                <input type="text" placeholder="18" value={age} onChange={(e) => setAge(e.target.value)}/>
                 <label>Email:</label>
                 <input type="email" placeholder="email@test.ua" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 <label>Password:</label>
