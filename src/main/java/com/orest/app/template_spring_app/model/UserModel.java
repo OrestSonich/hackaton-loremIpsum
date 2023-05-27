@@ -20,6 +20,7 @@ public class UserModel {
     private List<ProjectModel> projects;
     private List<RangModel> rangs;
 
+
     public static UserModel toModel(UserEntity entity){
         UserModel model = new UserModel();
         model.setFirstName(entity.getFirstName());

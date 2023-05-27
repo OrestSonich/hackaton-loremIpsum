@@ -19,9 +19,10 @@ public class ProjectEntity {
     private Long id;
     private int hours;
     private String projectName;
+    private String category;
 
     @ManyToOne
-    @JoinColumn(name = "project_id")
+    @JoinColumn(name = "user_id")
     private UserEntity owner;
     private Date createdAt;
     private Date updatedAt;

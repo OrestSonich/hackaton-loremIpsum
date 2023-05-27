@@ -21,7 +21,7 @@ public class RangEntity {
     @Enumerated(value = EnumType.STRING)
     private RangEnum rang = RangEnum.BEGINNER_VOLUNTEER;
     @ManyToOne
-    @JoinColumn(name = "rang_id")
+    @JoinColumn(name = "user_id")
     private UserEntity owner;
     private Date createdAt;
     private Date updatedAt;
