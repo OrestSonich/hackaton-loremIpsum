@@ -15,8 +15,8 @@ public class UserAccountController {
     @Autowired
     private UserService service;
 
-    @GetMapping("/user")
-    public ResponseEntity getUserById(@RequestParam Long user_id){
-        return ResponseEntity.ok(service.getOneById(user_id));
+    @GetMapping("/user/{username}")
+    public ResponseEntity getUserById(@PathVariable String username){
+        return ResponseEntity.ok(service.getOneByEmail(username));
     }
 }

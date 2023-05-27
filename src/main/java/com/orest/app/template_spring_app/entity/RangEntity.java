@@ -18,7 +18,6 @@ public class RangEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String rang;
-//    private String user;
 
     @ManyToOne
     @JoinColumn(name = "rang_id")

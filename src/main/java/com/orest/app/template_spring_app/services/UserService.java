@@ -17,4 +17,8 @@ public class UserService {
                 .orElseThrow();
         return UserModel.toModel(user);
     }
+    public UserModel getOneByEmail(String email){
+        UserEntity user = repository.findByEmail(email).orElseThrow();
+        return UserModel.toModel(user);
+    }
 }

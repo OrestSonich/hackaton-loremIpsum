@@ -33,8 +33,6 @@ public class RangService {
                 .orElseThrow();
         if (rangs.getRang() != null)
             findEntity.setRang(rangs.getRang());
-//        if (rangs.getUser() != null)
-//            findEntity.setUser(rangs.getUser());
 
         findEntity.setUpdatedAt(Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300"))));
         rangRepo.save(findEntity);
