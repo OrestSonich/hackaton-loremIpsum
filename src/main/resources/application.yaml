@@ -1,9 +1,9 @@
 ##
 spring:
   datasource:
-    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/moneysense}
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://containers-us-west-41.railway.app:6596/postgres}
     username: ${JDBC_DATABASE_USERNAME:postgres}
-    password: ${JDBC_DATABASE_PASSWORD:root}
+    password: ${JDBC_DATABASE_PASSWORD:6XAJ1beLIGcMipQM44nX}
     driver-class-name: org.postgresql.Driver
 ##
   jpa:
