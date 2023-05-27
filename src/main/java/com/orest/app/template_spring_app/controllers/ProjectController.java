@@ -2,6 +2,7 @@ package com.orest.app.template_spring_app.controllers;
 
 import com.orest.app.template_spring_app.entity.ProjectEntity;
 import com.orest.app.template_spring_app.services.ProjectService;
+import com.orest.app.template_spring_app.services.RangService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,9 +27,15 @@ public class ProjectController {
         return ResponseEntity.ok(service.getAllProject());
     }
 
+    @GetMapping("/all/{category}")
+    public ResponseEntity getByCategory(@PathVariable String category){
+        return ResponseEntity.ok(service.getAllByCategory(category));
+    }
+
     @PostMapping("/create")
     public ResponseEntity createProject(@RequestBody ProjectEntity project,
                                         @RequestParam Long user_id){
         return ResponseEntity.ok(service.addProject(project, user_id));
     }
+
 }

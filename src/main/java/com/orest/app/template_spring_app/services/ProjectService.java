@@ -55,4 +55,9 @@ public class ProjectService {
         List<ProjectEntity> findEntity = projectRepo.findAll();
         return ProjectModel.toModel(findEntity);
     }
+
+    public List<ProjectModel> getAllByCategory(String category) {
+        List<ProjectEntity> findEntity = projectRepo.findAllByCategory(category);
+        return ProjectModel.toModel(findEntity);
+    }
 }
