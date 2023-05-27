@@ -18,7 +18,7 @@ public class ProjectModel {
         model.setId(entity.getId());
         model.setHours(entity.getHours());
         model.setProject(entity.getProjectName());
-        model.setUser(entity.getUser());
+//        model.setUser(entity.getUser());
         return model;
     }
 

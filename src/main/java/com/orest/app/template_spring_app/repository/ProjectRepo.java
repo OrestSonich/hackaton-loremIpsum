@@ -8,8 +8,8 @@ import java.util.Optional;
 
 public interface ProjectRepo extends JpaRepository<ProjectEntity, Long> {
 
-    Optional<ProjectEntity> findByProject(String project);
-    boolean existsProjectEntityByProject (String project);
+    Optional<ProjectEntity> findByProjectName(String project);
+    boolean existsProjectEntityByProjectName (String project);
 
     List<ProjectEntity> findAllByProjectName(String project);
 }

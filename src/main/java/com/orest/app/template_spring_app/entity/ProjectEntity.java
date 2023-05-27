@@ -19,7 +19,6 @@ public class ProjectEntity {
     private Long id;
     private int hours;
     private String projectName;
-    private String user;
 
     @ManyToOne
     @JoinColumn(name = "project_id")

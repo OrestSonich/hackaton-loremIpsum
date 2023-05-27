@@ -13,7 +13,7 @@ public class RangModel {
         RangModel model = new RangModel();
         model.setId(entity.getId());
         model.setRang(entity.getRang());
-        model.setUser(entity.getUser());
+//        model.setUser(entity.getUser());
         return model;
     }
 }

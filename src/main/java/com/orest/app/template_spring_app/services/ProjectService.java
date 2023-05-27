@@ -36,8 +36,8 @@ public class ProjectService {
             findEntity.setHours(costs.getHours());
         if (costs.getProjectName() != null)
             findEntity.setProjectName(costs.getProjectName());
-        if (costs.getUser() != null)
-            findEntity.setUser(costs.getUser());
+//        if (costs.getUser() != null)
+//            findEntity.setUser(costs.getUser());
 
         findEntity.setUpdatedAt(Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300"))));
         projectRepo.save(findEntity);
