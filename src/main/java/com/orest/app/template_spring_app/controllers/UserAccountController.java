@@ -15,8 +15,8 @@ public class UserAccountController {
     private UserService service;
 
     @CrossOrigin
-    @GetMapping("/user/")
-    public ResponseEntity getUserById(@RequestParam String username){
-        return ResponseEntity.ok(service.getOneByEmail(username));
+    @GetMapping("/user")
+    public ResponseEntity getUserById(){
+        return ResponseEntity.ok(service.getOneByEmail("test@gmail.com"));
     }
 }
