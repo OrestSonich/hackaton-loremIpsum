@@ -5,7 +5,6 @@ import com.orest.app.template_spring_app.entity.ProjectEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.orest.app.template_spring_app.pojo.ProjectModel;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -17,19 +16,19 @@ public class ProjectService {
     @Autowired
     private ProjectRepo projectRepo;
 
-    public ProjectModel addCosts(ProjectEntity project, Long id) {
-        project.setCreatedAt(Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300"))));
-        ProjectEntity user = projectRepo.findById(id).
-                orElseThrow(() ->new ArrayIndexOutOfBoundsException("project not found"));
-        project.setOwner(project.getOwner());
-        return ProjectModel.toModel(projectRepo.save(project));
+    public ProjectModel addProject(ProjectEntity projects, Long id) {
+        projects.setCreatedAt(Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300"))));
+        ProjectEntity project = projectRepo.findById(id).
+                orElseThrow();
+        projects.setOwner(projects.getOwner());
+        return ProjectModel.toModel(projectRepo.save(projects));
     }
 
     public void deleteProjects(Long id) {
         projectRepo.deleteById(id);
     }
 
-    public ProjectModel updateCosts(ProjectEntity costs, Long id) {
+    public ProjectModel updateProject(ProjectEntity costs, Long id) {
         ProjectEntity findEntity = projectRepo.findById(id)
                 .orElseThrow(() ->new ArrayIndexOutOfBoundsException("project not found"));
         if (costs.getHours() != 0)

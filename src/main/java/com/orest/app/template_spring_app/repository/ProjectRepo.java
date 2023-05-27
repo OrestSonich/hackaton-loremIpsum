@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface ProjectRepo extends JpaRepository<ProjectEntity, Long> {
 
-    Optional<ProjectEntity> findByProjectName(String projectName);
-    boolean existsProjectEntityByProjectName (String projectName);
+    Optional<ProjectEntity> findByProject(String project);
+    boolean existsProjectEntityByProject (String project);
 }
