@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/user")
+@RequestMapping("/api/v1/")
 @RequiredArgsConstructor
 @CrossOrigin
 public class UserAccountController {
@@ -15,8 +15,8 @@ public class UserAccountController {
     @Autowired
     private UserService service;
 
-    @GetMapping("/{username}")
-    public ResponseEntity getUserById(@PathVariable String username){
+    @GetMapping("/user/")
+    public ResponseEntity getUserById(@RequestParam String username){
         return ResponseEntity.ok(service.getOneByEmail(username));
     }
 }
