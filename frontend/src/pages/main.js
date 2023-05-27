@@ -1,4 +1,4 @@
-import '../stylesheets/profile.css';
+import '../stylesheets/main.css';
 import Logo from "../images/logo.svg";
 import home from "../images/home.svg";
 import profile from "../images/profile.svg";
@@ -6,7 +6,7 @@ import exit from "../images/exit.svg";
 import facebook from "../images/facebook.svg";
 import instagram from "../images/instagram.svg";
 import twitter from "../images/twitter.svg";
-const Profile =() => {
+const Main =() => {
 	return(
 		<div className="container">
 			{/*=====Header=====*/}
@@ -23,30 +23,45 @@ const Profile =() => {
 
 			{/*=====About me=====*/}
 			<div className="about--me">
-				<div className="box--about"></div>
-				<div className="about--info">
-					<h2>Петро Валянок</h2>
-					<p>Ранг: <b>Старший волонтер</b></p>
-				</div>
+					<h1>Найближчі події:</h1>
 			</div>
 
-			{/*=====progressAndHours=====*/}
-			<div className="progressAndHours">
-				<div className="progress">
+			{/*=====Events=====*/}
+			<div className="events">
+				<div className="event--item">
 
 				</div>
 
-				<div className="hours">
+				<div className="event--item">
 
 				</div>
 
+				<div className="event--item">
+
+				</div>
+
+				<div className="event--item">
+
+				</div>
+
+				<button><h2>Більше</h2></button>
+
 			</div>
 
-			{/*=====History=====*/}
-			<div className="history">
+
+			{/*=====Rank=====*/}
+			<div className="rank">
 
 			</div>
 
+
+			{/*=====Progress=====*/}
+			<div className="progress--main">
+
+			</div>
+
+
+			{/*=====Footer=====*/}
 			<div className="footer">
 
 				<h1><img src={Logo} alt=""/>UNITED VOLUNTEER FORCE</h1>
@@ -63,4 +78,4 @@ const Profile =() => {
 		</div>
 	)
 }
-export default Profile
+export default Main
