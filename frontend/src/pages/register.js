@@ -7,7 +7,7 @@ const Register =() => {
 
 				<h1> <img src={Logo} alt=""/> UNITED VOLUNTEER FORCE</h1>
 
-				<span>З поверненням!</span>
+				<span>Реєстрація</span>
 
 				{/*EMAIL*/}
 				<div className="input--field">
