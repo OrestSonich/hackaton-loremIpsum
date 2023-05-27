@@ -1,7 +1,9 @@
 package com.orest.app.template_spring_app.services;
 
+import com.orest.app.template_spring_app.entity.UserEntity;
 import com.orest.app.template_spring_app.repository.ProjectRepo;
 import com.orest.app.template_spring_app.entity.ProjectEntity;
+import com.orest.app.template_spring_app.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.orest.app.template_spring_app.model.ProjectModel;
 import org.springframework.stereotype.Service;
@@ -17,11 +19,13 @@ public class ProjectService {
     @Autowired
     private ProjectRepo projectRepo;
 
+    @Autowired
+    private UserRepo userRepo;
+
     public ProjectModel addProject(ProjectEntity projects, Long id) {
         projects.setCreatedAt(Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300"))));
-        ProjectEntity project = projectRepo.findById(id).
-                orElseThrow();
-        projects.setOwner(projects.getOwner());
+        UserEntity user = userRepo.findById(id).orElseThrow();
+        projects.setOwner(user);
         return ProjectModel.toModel(projectRepo.save(projects));
     }
 
@@ -44,6 +48,11 @@ public class ProjectService {
 
     public List<ProjectModel> getAllProjectsByName(String companyName) {
         List<ProjectEntity> findEntity = projectRepo.findAllByProjectName(companyName);
-        return null;
+        return ProjectModel.toModel(findEntity);
+    }
+
+    public List<ProjectModel> getAllProject() {
+        List<ProjectEntity> findEntity = projectRepo.findAll();
+        return ProjectModel.toModel(findEntity);
     }
 }

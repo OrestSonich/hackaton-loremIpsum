@@ -1,5 +1,6 @@
 package com.orest.app.template_spring_app.controllers;
 
+import com.orest.app.template_spring_app.entity.ProjectEntity;
 import com.orest.app.template_spring_app.services.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,18 @@ public class ProjectController {
     private ProjectService service;
 
     @GetMapping ("/{companyName}")
-    public ResponseEntity getAllProjects(@PathVariable String companyName){
+    public ResponseEntity getAllProjectsByName(@PathVariable String companyName){
         return ResponseEntity.ok(service.getAllProjectsByName(companyName));
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity getAllProject(){
+        return ResponseEntity.ok(service.getAllProject());
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity createProject(@RequestBody ProjectEntity project,
+                                        @RequestParam Long user_id){
+        return ResponseEntity.ok(service.addProject(project, user_id));
     }
 }

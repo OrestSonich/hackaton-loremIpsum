@@ -33,9 +33,4 @@ public class AuthController {
     ) {
         return ResponseEntity.ok(service.authenticate(request));
     }
-    @CrossOrigin
-    @GetMapping("/user")
-    public ResponseEntity getUserById(){
-        return ResponseEntity.ok(userService.getOneByEmail("test@gmail.com"));
-    }
 }
