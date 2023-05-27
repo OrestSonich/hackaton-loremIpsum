@@ -4,6 +4,7 @@ import com.orest.app.template_spring_app.entity.UserEntity;
 import com.orest.app.template_spring_app.repository.ProjectRepo;
 import com.orest.app.template_spring_app.entity.ProjectEntity;
 import com.orest.app.template_spring_app.repository.UserRepo;
+import io.jsonwebtoken.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.orest.app.template_spring_app.model.ProjectModel;
 import org.springframework.stereotype.Service;
@@ -33,13 +34,16 @@ public class ProjectService {
         projectRepo.deleteById(id);
     }
 
-    public ProjectModel updateProject(ProjectEntity costs, Long id) {
+    public ProjectModel updateProject(ProjectEntity project, Long id) {
         ProjectEntity findEntity = projectRepo.findById(id)
-                .orElseThrow(() ->new ArrayIndexOutOfBoundsException("project not found"));
-        if (costs.getHours() != 0)
-            findEntity.setHours(costs.getHours());
-        if (costs.getProjectName() != null)
-            findEntity.setProjectName(costs.getProjectName());
+                .orElseThrow(() ->new IOException("project not found"));
+        if (project.getHours() != 0)
+            findEntity.setHours(project.getHours());
+        if (project.getProjectName() != null)
+            findEntity.setProjectName(project.getProjectName());
+        findEntity.setAddress(project.getAddress());
+        findEntity.setCategory(project.getCategory());
+
 
         findEntity.setUpdatedAt(Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300"))));
         projectRepo.save(findEntity);
