@@ -1,6 +1,7 @@
 package com.orest.app.template_spring_app.security.auth;
 
 import com.orest.app.template_spring_app.entity.UserEntity;
+import com.orest.app.template_spring_app.enums.RolesEnum;
 import com.orest.app.template_spring_app.exception.EmailAreBusyException;
 import com.orest.app.template_spring_app.repository.UserRepo;
 import com.orest.app.template_spring_app.security.JwtService;
@@ -10,6 +11,9 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.sql.Date;
+import java.time.LocalDate;
 
 @Service
 @RequiredArgsConstructor
@@ -25,14 +29,12 @@ public class AuthService {
             throw new EmailAreBusyException("This email are busy");
         }
         var user = UserEntity.builder()
-//                .firstName(request.getFirstName())
-//                .lastName(request.getLastName())
-//                .email(request.getEmail())
-//                .password(passwordEncoder.encode(request.getPassword()))
-//                .role(UserRole.USER)
-//                .createdAt(Date.valueOf(LocalDate.now()))
-//                .enabled(true)
-                // todo realise
+                .firstName(request.getFirstName())
+                .lastName(request.getLastName())
+                .email(request.getEmail())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .role(RolesEnum.USER)
+                .createdAt(Date.valueOf(LocalDate.now()))
                 .build();
         repository.save(user);
         var jwtToken = jwtService.generateJwt(user);

@@ -16,7 +16,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 jwt:
-  secret:
+  secret: hXDdkbLC
   expiration: 86400000
 server:
   port: 8083
