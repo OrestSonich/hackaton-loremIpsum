@@ -15,6 +15,7 @@ public class UserAccountController {
     @Autowired
     private UserService service;
 
+    @CrossOrigin
     @GetMapping("/user/{username}")
     public ResponseEntity getUserById(@PathVariable String username){
         return ResponseEntity.ok(service.getOneByEmail(username));
