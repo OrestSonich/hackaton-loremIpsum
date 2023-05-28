@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #2C2C2C;
 }
 
 code {
@@ -18,4 +19,7 @@ code {
 }
 .container {
   width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

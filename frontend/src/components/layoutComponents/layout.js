@@ -4,7 +4,9 @@ const Layout = () => {
     return(
         <>
             <Header/>
-            <Outlet/>
+            <div style={{width:"100%", display:"flex",justifyContent:"center", minHeight:"100vh"}}>
+                <Outlet/>
+            </div>
             <footer>Footer</footer>
         </>
     )
