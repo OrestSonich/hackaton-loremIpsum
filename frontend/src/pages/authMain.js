@@ -75,7 +75,6 @@ const AuthMain = () => {
                 </GoogleMap>
             </div>
             <button className="add__button_map" onClick={(e) => {
-                e.preventDefault()
                 setOpen(true)
             }}>
                 <MdPlaylistAddCircle/>
