@@ -1,6 +1,7 @@
 package com.orest.app.template_spring_app.services;
 
 import com.orest.app.template_spring_app.entity.UserEntity;
+import com.orest.app.template_spring_app.exception.NotFoundException;
 import com.orest.app.template_spring_app.repository.ProjectRepo;
 import com.orest.app.template_spring_app.entity.ProjectEntity;
 import com.orest.app.template_spring_app.repository.UserRepo;
@@ -25,7 +26,7 @@ public class ProjectService {
 
     public ProjectModel addProject(ProjectEntity projects, Long id) {
         projects.setCreatedAt(Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300"))));
-        UserEntity user = userRepo.findById(id).orElseThrow();
+        UserEntity user = userRepo.findById(id).orElseThrow(() -> new NotFoundException("Rank not found"));
         projects.setOwner(user);
         return ProjectModel.toModel(projectRepo.save(projects));
     }
@@ -36,7 +37,7 @@ public class ProjectService {
 
     public ProjectModel updateProject(ProjectEntity project, Long id) {
         ProjectEntity findEntity = projectRepo.findById(id)
-                .orElseThrow(() ->new IOException("project not found"));
+                .orElseThrow(() -> new NotFoundException("Rank not found"));
         if (project.getHours() != 0)
             findEntity.setHours(project.getHours());
         if (project.getProjectName() != null)

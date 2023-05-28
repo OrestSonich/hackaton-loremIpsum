@@ -2,6 +2,7 @@ package com.orest.app.template_spring_app.services;
 
 import com.orest.app.template_spring_app.entity.RangEntity;
 import com.orest.app.template_spring_app.entity.UserEntity;
+import com.orest.app.template_spring_app.exception.NotFoundException;
 import com.orest.app.template_spring_app.model.RangModel;
 import com.orest.app.template_spring_app.repository.RangRepo;
 import com.orest.app.template_spring_app.repository.UserRepo;
@@ -23,7 +24,7 @@ public class RangService {
     public RangModel addRang(RangEntity rangs, Long id) {
         rangs.setCreatedAt(Date.valueOf(LocalDate.now(ZoneId.of("GMT+0300"))));
         UserEntity user = userRepo.findById(id).
-                orElseThrow();
+                orElseThrow(() -> new NotFoundException("Rank not found"));
         rangs.setOwner(user);
         return RangModel.toModel(rangRepo.save(rangs));
     }
@@ -34,7 +35,7 @@ public class RangService {
 
     public RangModel updateRang(RangEntity rangs, Long id) {
         RangEntity findEntity = rangRepo.findById(id)
-                .orElseThrow();
+                .orElseThrow(() -> new NotFoundException("Rank not found"));
         if (rangs.getRang() != null)
             findEntity.setRang(rangs.getRang());
 
