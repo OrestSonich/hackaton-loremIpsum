@@ -1,0 +1,21 @@
+.add__button_map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border-style: none;
+  cursor: pointer;
+  color: #4FAFA1;
+  position: fixed;
+  top: 80%;
+  left: 48%;
+  font-size: 90px;
+  transition: 0.3s;
+}
+.add__button_map:hover {
+  color: #35736a;
+}
+
+/*# sourceMappingURL=addButton.css.map */

@@ -1,6 +1,8 @@
 import {useState} from "react"
 import axios from "axios";
 import {setAuthToken} from "../../http/setAuthToken";
+import Logo from "../../img/logo.svg"
+import {Link} from "react-router-dom";
 const Register = () => {
     const [email, setEmail] = useState("");
     const [password1, setPassword1] = useState("");
@@ -9,12 +11,12 @@ const Register = () => {
     const [secondName, setSecondName] = useState("");
     const [age, setAge] = useState("");
 
-    const handleSubmit = (e,email,password1,password2,fistName,secondName,age) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         if(email && password1 === password2 && password1 && password2 && firstName && secondName && age) {
             const registerPayload = {
                 age: age,
-                firstName:fistName,
+                firstName:firstName,
                 lastName:secondName,
                 email: email,
                 password: password1,
@@ -33,22 +35,48 @@ const Register = () => {
     }
     return(
         <div className="container">
-            <h3>Login</h3>
-            <form>
-                <label>First Name:</label>
-                <input type="text" placeholder="Ivan" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
-                <label>Last Name:</label>
-                <input type="text" placeholder="Zlotazec" value={secondName} onChange={(e) => setSecondName(e.target.value)}/>
-                <label>Age:</label>
-                <input type="text" placeholder="18" value={age} onChange={(e) => setAge(e.target.value)}/>
-                <label>Email:</label>
-                <input type="email" placeholder="email@test.ua" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <label>Password:</label>
-                <input type="password" placeholder="******" value={password1} onChange={(e) => setPassword1(e.target.value)}/>
-                <label>Confirm Password:</label>
-                <input type="password" placeholder="******" value={password2} onChange={(e) => setPassword2(e.target.value)}/>
-                <button onClick={(e) => handleSubmit(e,email,password1,password2,firstName,secondName,age)}>Login</button>
-            </form>
+            <div className="login">
+
+                <h1> <img src={Logo} alt=""/> UNITED VOLUNTEER FORCE</h1>
+
+                <span>Реєстрація</span>
+
+                {/*EMAIL*/}
+                <div className="input--field">
+                    {!email? <input type="text" placeholder="email@gmail.com" style={{borderStyle:"solid",borderWidth:1,borderColor:"#e72641"}} value={email} onChange={(e) => setEmail(e.target.value)}/>:<input type="text" style={{borderStyle:"solid",borderWidth:1,borderColor:"#4ef135"}} placeholder="Ім'я та Прізвище" value={email} onChange={(e) => setEmail(e.target.value)}/>}
+                </div>
+
+                {/*NAME*/}
+                <div className="input--field">
+                    {!firstName? <input type="text" placeholder="Ім'я" style={{borderStyle:"solid",borderWidth:1,borderColor:"#e72641"}} value={firstName} onChange={(e) => setFirstName(e.target.value)}/>:<input type="text" style={{borderStyle:"solid",borderWidth:1,borderColor:"#4ef135"}} placeholder="Ім'я та Прізвище" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>}
+                </div>
+
+                <div className="input--field">
+                    {!firstName? <input type="text" placeholder="Прізвище" style={{borderStyle:"solid",borderWidth:1,borderColor:"#e72641"}} value={secondName} onChange={(e) => setSecondName(e.target.value)}/>:<input type="text" style={{borderStyle:"solid",borderWidth:1,borderColor:"#4ef135"}} placeholder="Ім'я та Прізвище" value={secondName} onChange={(e) => setSecondName(e.target.value)}/>}
+                </div>
+
+                {/*AGE*/}
+                <div className="input--field">
+                    {!age?<input type="number" style={{borderStyle:"solid",borderWidth:1,borderColor:"#e72641"}} placeholder="Ваш вік" value={age} onChange={(e) => setAge(e.target.value)}/>:<input type="number" style={{borderStyle:"solid",borderWidth:1,borderColor:"#4ef135"}} placeholder="Ваш вік" value={age} onChange={(e) => setAge(e.target.value)}/>}
+                </div>
+
+                {/*Password*/}
+                <div className="input--field">
+                    {!password1 && password1 === password2?<input type="password" style={{borderStyle:"solid",borderWidth:1,borderColor:"#e72641"}} placeholder="*****" value={password1} onChange={(e) => setPassword1(e.target.value)}/>:<input type="password" style={{borderStyle:"solid",borderWidth:1,borderColor:"#4ef135"}} placeholder="******" value={password1} onChange={(e) => setPassword1(e.target.value)}/>}
+                </div>
+
+                {/*Password*/}
+                <div className="input--field">
+                    {!password2 && password2 === password1?<input type="password" style={{borderStyle:"solid",borderWidth:1,borderColor:"#e72641"}} placeholder="*****" value={password2} onChange={(e) => setPassword2(e.target.value)}/>:<input type="password" style={{borderStyle:"solid",borderWidth:1,borderColor:"#4ef135"}} placeholder="******" value={password2} onChange={(e) => setPassword2(e.target.value)}/>}
+                </div>
+
+                <div className="choose">
+                    <Link to="/login" className="black">Увійти</Link>
+                    <Link to="/register" className="gray">Зареєструватися</Link>
+                </div>
+
+                <button onClick={(e) => handleSubmit(e)}><span>Зареєструватися</span></button>
+            </div>
         </div>
     )
 };

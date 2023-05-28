@@ -1,12 +1,14 @@
 import {useState} from "react"
 import axios from "axios";
-
+import Logo from '../../img/logo.svg';
 import {setAuthToken} from "../../http/setAuthToken";
+import "../../stylesheets/auth.scss"
+import {Link} from "react-router-dom";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = (e,email,password) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         if(email && password) {
             const loginPayload = {
@@ -19,7 +21,7 @@ const Login = () => {
 
                     localStorage.setItem("token", token);
                     setAuthToken(token)
-                    window.location.href = '/'
+                    window.location.href = '/menu'
                 }).catch(err => console.log(err))
 
         }else {
@@ -28,14 +30,27 @@ const Login = () => {
     }
     return(
         <div className="container">
-            <h3>Login</h3>
-            <form>
-                <label>Email:</label>
-                <input type="email" placeholder="email@test.ua" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <label>Password:</label>
-                <input type="password" placeholder="******" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                <button onClick={(e) => handleSubmit(e,email,password)}>Login</button>
-            </form>
+            <div className="login">
+
+                <h1> <img src={Logo} alt=""/> UNITED VOLUNTEER FORCE</h1>
+
+                <span>З поверненням!</span>
+
+                <div className="input--field">
+                    <input type="email" placeholder="Електронна адреса" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                </div>
+
+                <div className="input--field">
+                    <input type="password" placeholder="Пароль" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                </div>
+
+                <div className="choose">
+                    <Link to="/login" className="gray">Увійти</Link>
+                    <Link to="/register" className="black">Зареєструватися</Link>
+                </div>
+
+                <button onClick={(e) => handleSubmit(e)}><span>Увійти</span></button>
+            </div>
         </div>
     )
 };

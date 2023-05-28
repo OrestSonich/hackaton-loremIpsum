@@ -5,7 +5,20 @@ import {IoMdExit} from "react-icons/io"
 import NavigationBar from "./navigationBar";
 import {Link} from "react-router-dom"
 import axios from "axios";
+import {useEffect, useState} from "react";
+import {setAuthToken} from "../../http/setAuthToken";
+import {parseJwT} from "../../http/parseJwT";
 const Header = () => {
+    const [data,setData] = useState([])
+    const user = parseJwT(localStorage.getItem("token"))
+    useEffect(()=> {
+        axios.get(`https://hackaton-app.herokuapp.com/api/v1/user/${user.sub}`)
+            .then(async response => {
+                setAuthToken(localStorage.getItem("token"))
+                setData(response)
+            })
+    })
+    console.log(data)
     return(
         <header>
             <div className="containerH">
@@ -18,13 +31,12 @@ const Header = () => {
                         <Avatar.Root className="AvatarRoot">
                             <Avatar.Image alt="UserName"
                                           className="AvatarImage"
-                                          src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80"
                             />
                             <Avatar.Fallback className="AvatarFallback" delayMs={600}>
-                                CT
+                                {/*{data.data.firstName[0].toUpperCase()}{data.data.lastName[0].toUpperCase()}*/}
                             </Avatar.Fallback>
                         </Avatar.Root>
-                        <button onClick={() => delete axios.defaults.headers.common["Authorization"]}><IoMdExit/></button>
+                        <button onClick={() => localStorage.removeItem("token")}><IoMdExit/></button>
                     </div>:<div className="auth__form"><Link to="/register">Register</Link>/<Link to="login">Login</Link></div>
                 }
             </div>
