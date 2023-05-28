@@ -10,14 +10,15 @@ import {setAuthToken} from "../../http/setAuthToken";
 import {parseJwT} from "../../http/parseJwT";
 const Header = () => {
     const [data,setData] = useState([])
-    const user = parseJwT(localStorage.getItem("token"))
-    useEffect(()=> {
-        axios.get(`https://hackaton-app.herokuapp.com/api/v1/user/${user.sub}`)
-            .then(async response => {
-                setAuthToken(localStorage.getItem("token"))
-                setData(response)
-            })
-    })
+        const user = parseJwT(localStorage.getItem("token"))
+        useEffect(()=> {
+            setAuthToken(localStorage.getItem("token"))
+            axios.get(`https://hackaton-app.herokuapp.com/api/v1/user/${user.sub}`)
+                .then(response => {
+                    setData(response)
+                    console.log(response)
+                })
+        },[])
     console.log(data)
     return(
         <header>
