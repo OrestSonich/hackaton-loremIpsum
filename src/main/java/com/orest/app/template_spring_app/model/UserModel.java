@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Data
 public class UserModel {
-
+    private Long id;
     private String firstName;
     private String lastName;
     private int age;
@@ -28,6 +28,7 @@ public class UserModel {
         model.setAge(entity.getAge());
         model.setCreatedAt(entity.getCreatedAt());
         model.setUpdatedAt(entity.getUpdatedAt());
+        model.setId(entity.getId());
         model.setProjects(entity.getProjects().stream().map(ProjectModel::toModel).collect(Collectors.toList()));
         model.setRangs(entity.getRangs().stream().map(RangModel::toModel).collect(Collectors.toList()));
         return model;
