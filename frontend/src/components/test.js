@@ -1,8 +1,8 @@
 import '../stylesheets/profile.css';
-import Main from "../pages/main";
+import Landing from "../pages/landing";
 const Test =() => {
     return(
-            <Main/>
+            <Landing/>
     )
 }
 export default Test
