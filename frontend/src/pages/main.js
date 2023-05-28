@@ -8,7 +8,7 @@ import instagram from "../images/instagram.svg";
 import twitter from "../images/twitter.svg";
 const Main =() => {
 	return(
-		<div className="container">
+		<div className="main__main">
 			{/*=====Header=====*/}
 			<div className="header">
 				<img src={Logo} alt=""/>
@@ -20,61 +20,62 @@ const Main =() => {
 					<img src={exit} alt=""/>
 				</div>
 			</div>
-
-			{/*=====About me=====*/}
-			<div className="about--me">
+			<div className="container__main">
+				{/*=====About me=====*/}
+				<div className="about--me">
 					<h1>Найближчі події:</h1>
-			</div>
+				</div>
 
-			{/*=====Events=====*/}
-			<div className="events">
-				<div className="event--item">
+				{/*=====Events=====*/}
+				<div className="events">
+					<div className="event--item">
+
+					</div>
+
+					<div className="event--item">
+
+					</div>
+
+					<div className="event--item">
+
+					</div>
+
+					<div className="event--item">
+
+					</div>
+
+					<button><h2>Більше</h2></button>
 
 				</div>
 
-				<div className="event--item">
+
+				{/*=====Rank=====*/}
+				<div className="rank">
 
 				</div>
 
-				<div className="event--item">
+
+				{/*=====Progress=====*/}
+				<div className="progress--main">
 
 				</div>
 
-				<div className="event--item">
 
-				</div>
+				{/*=====Footer=====*/}
+				<footer className="footer__main">
 
-				<button><h2>Більше</h2></button>
+					<h1><img src={Logo} alt=""/>UNITED VOLUNTEER FORCE</h1>
 
-			</div>
+					<div className="footer--icons">
+						<img src={facebook} alt=""/>
+						<img src={instagram} alt=""/>
+						<img src={twitter} alt=""/>
+					</div>
 
-
-			{/*=====Rank=====*/}
-			<div className="rank">
-
-			</div>
-
-
-			{/*=====Progress=====*/}
-			<div className="progress--main">
+					<p>Наша електрона пошта: <b>unitedvolunteerforce@gmail.com</b></p>
+				</footer>
 
 			</div>
-
-
-			{/*=====Footer=====*/}
-			<div className="footer">
-
-				<h1><img src={Logo} alt=""/>UNITED VOLUNTEER FORCE</h1>
-
-				<div className="footer--icons">
-					<img src={facebook} alt=""/>
-					<img src={instagram} alt=""/>
-					<img src={twitter} alt=""/>
-				</div>
-
-				<p>Наша електрона пошта: <b>unitedvolunteerforce@gmail.com</b></p>
-			</div>
-
 		</div>
 	)
 }

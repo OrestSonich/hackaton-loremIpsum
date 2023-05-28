@@ -7,19 +7,59 @@ div {
     display: flex;
 }
 
-.container {
-    flex-direction: column;
-    width: 100%;
-    max-width: 1000px;
-    align-items: center;
-    margin: 0 auto;
-}
+/*=====Mobile=====*/
+/*.mobile_btn {*/
+/*    display: none;*/
+/*}*/
+
+/*@media (max-width: 900px) {*/
+/*    .mobile_btn {*/
+/*        display: block;*/
+/*        position: absolute;*/
+/*        right: 10px;*/
+/*        top: 27px;*/
+/*        cursor: pointer;*/
+/*        z-index: 10;*/
+/*    }*/
+
+/*    .menu {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        justify-content: center;*/
+/*        position: fixed;*/
+/*        left: -100%;*/
+/*        right: 0;*/
+/*        top: 0;*/
+/*        bottom: 0;*/
+/*        width: 100%;*/
+/*        height: 100vh;*/
+/*        background-color: #f8f8f8;*/
+/*        z-index: 10;*/
+/*        transition: left 1s;*/
+/*    }*/
+
+/*    .active {*/
+/*        left: 0;*/
+/*    }*/
+
+/*    .menu a {*/
+/*        font-size: 28px;*/
+/*    }*/
+/*}*/
+
 
 /*=====Header=====*/
 
+.main{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 40px;
+}
+
 .header {
     max-width: 1200px;
-    width: 1100px;
+    width: 100%;
     height: 100px;
     border-bottom: solid #fff;
 }
@@ -49,35 +89,43 @@ div {
     height: 30px;
 }
 
+.container__profile {
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    align-items: center;
+    margin: 0;
+}
+
 /*=====About=====*/
 
-.about--me {
+.about__me {
     width: 100%;
-    height: 110px;
+    height: 90px;
     border-bottom: solid 1px #fff;
-    padding: 20px;
+    margin: 20px;
+    align-items: center;
+    padding-bottom: 20px;
 }
 
-.about--me h2 {
+.about__me h2 {
     margin: 0;
     color: #fff;
 }
 
-.about--me p {
+.about__me p {
     margin: 0;
     color: #fff;
 }
 
-.about--me span {
+.about__me span {
     margin: 0;
     color: #fff;
 }
 
-.box--about {
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    margin: auto 0;
+.about__me img {
+    width: 90px;
+    height: 90px;
 }
 
 .about--info {
@@ -89,8 +137,7 @@ div {
 
 /*=====progressAndHours=====*/
 .progressAndHours {
-    margin-top: 50px;
-    height: 350px;
+    height: 150px;
     width: 100%;
     gap: 50px;
     justify-content: space-between;
@@ -100,22 +147,28 @@ div {
     background-color: #3B3F3F;
     border-radius: 20px;
     width: 45%;
+    height: 150px;
 }
 
 .hours {
     background-color: #3B3F3F;
     border-radius: 20px;
     width: 55%;
+    height: 150px;
 }
 
 /*=====history=====*/
 .history {
     margin-top: 50px;
-    height: 350px;
+    height: 150px;
     width: 100%;
-    gap: 50px;
+}
+
+.history__item {
+    height: 150px;
     background-color: #3B3F3F;
     border-radius: 20px;
+    width: 100%;
 }
 
 .footer {
@@ -149,4 +202,36 @@ div {
 .footer p {
     color: #fff;
     margin: 0;
+}
+
+
+/*=====Media=====*/
+@media screen and (max-width: 800px) {
+    .header {
+        display: none;
+    }
+
+    .progressAndHours {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        height: 300px;
+    }
+
+    .progress {
+        background-color: #3B3F3F;
+        width: 100%;
+        height: 150px;
+    }
+
+    .hours {
+        background-color: #3B3F3F;
+        width: 100%;
+        height: 150px;
+    }
+
+    .history {
+        margin-top: 20px;
+    }
 }

@@ -1,4 +1,4 @@
-import '../stylesheets/login.css';
+import '../stylesheets/register.css';
 import Logo from '../images/logo.svg';
 const Register =() => {
 	return(
