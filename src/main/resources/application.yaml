@@ -6,6 +6,15 @@ spring:
     password: ${JDBC_DATABASE_PASSWORD:6XAJ1beLIGcMipQM44nX}
     driver-class-name: org.postgresql.Driver
 ##
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sonich.edu@gmail.com
+    password: Jhtcn20051600500
+    protocol: smtp
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
   jpa:
     hibernate:
       ddl-auto: create
