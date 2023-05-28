@@ -9,15 +9,15 @@ import {useEffect, useState} from "react";
 import {setAuthToken} from "../../http/setAuthToken";
 import {parseJwT} from "../../http/parseJwT";
 const Header = () => {
-    const [data,setData] = useState([])
-        const user = parseJwT(localStorage.getItem("token"))
-        useEffect(()=> {
-            setAuthToken(localStorage.getItem("token"))
-            axios.get(`https://hackaton-app.herokuapp.com/api/v1/user/${user.sub}`)
-                .then(response => {
-                    setData(response.data)
-                })
-        })
+    // const [data,setData] = useState([])
+    //     const user = parseJwT(localStorage.getItem("token"))
+    //     useEffect(()=> {
+    //         setAuthToken(localStorage.getItem("token"))
+    //         axios.get(`https://hackaton-app.herokuapp.com/api/v1/user/${user.sub}`)
+    //             .then(response => {
+    //                 setData(response.data)
+    //             })
+    //     })
     return(
         <header>
             <div className="containerH">
