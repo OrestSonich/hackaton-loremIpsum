@@ -13,13 +13,13 @@ const ModalForm = (props) => {
 
     const user = parseJwT(localStorage.getItem("token"))
 
-    // useEffect(()=> {
-    //     axios.get(`https://hackaton-app.herokuapp.com/api/v1/user/${user.sub}`)
-    //         .then(async response => {
-    //             setAuthToken(localStorage.getItem("token"))
-    //             setData(response)
-    //         })
-    // })
+    useEffect(()=> {
+        axios.get(`https://hackaton-app.herokuapp.com/api/v1/user/${user.sub}`)
+            .then(async response => {
+                setAuthToken(localStorage.getItem("token"))
+                setData(response)
+            })
+    })
     const handleSubmit = () => {
         const res = {
             category:category,
@@ -27,7 +27,7 @@ const ModalForm = (props) => {
             address:address,
             hours:time
         }
-        axios.post(`https://hackaton-app.herokuapp.com/api/v1/projects/create?user_id=${data1.data.id}`,res).then(res => {
+        axios.post(`https://hackaton-app.herokuapp.com/api/v1/projects/create?user_id=${data1.data.id}`,res).then(resp => {
             setAuthToken(localStorage.getItem("token"))
         })
         props.onClose()
