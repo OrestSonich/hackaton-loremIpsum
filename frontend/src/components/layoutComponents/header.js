@@ -15,11 +15,9 @@ const Header = () => {
             setAuthToken(localStorage.getItem("token"))
             axios.get(`https://hackaton-app.herokuapp.com/api/v1/user/${user.sub}`)
                 .then(response => {
-                    setData(response)
-                    console.log(response)
+                    setData(response.data)
                 })
-        },[])
-    console.log(data)
+        })
     return(
         <header>
             <div className="containerH">
@@ -34,7 +32,7 @@ const Header = () => {
                                           className="AvatarImage"
                             />
                             <Avatar.Fallback className="AvatarFallback" delayMs={600}>
-                                {/*{data.data.firstName[0].toUpperCase()}{data.data.lastName[0].toUpperCase()}*/}
+                                {/*{data.firstName}{data.data.lastName}*/}
                             </Avatar.Fallback>
                         </Avatar.Root>
                         <button onClick={() => localStorage.removeItem("token")}><IoMdExit/></button>

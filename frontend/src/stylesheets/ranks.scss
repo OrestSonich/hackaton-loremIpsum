@@ -1,0 +1,51 @@
+
+
+.ranks {
+  margin-top: 870px;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    color: #F5F5F5;
+    font-weight: 700;
+    font-size: 26px;
+  }
+  .smth{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    p{
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 18px;
+      color: #F5F5F5;
+    }
+    .selected {
+      font-weight: 600;
+      font-size: 21px;
+      color: #F5F5F5;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      h3{
+        font-size: 20px;
+        font-weight: 600;
+        color: #EBEBEB;
+      }
+      p{
+        font-size: 24px;
+        font-weight: 600;
+        color: #F5F5F5;
+      }
+      .progressbar {
+        width: 550px;
+        height: 30px;
+        border-radius: 15px;
+        background: #3B3F3F;
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.ranks {
+  margin-top: 870px;
+  display: flex;
+  flex-direction: column;
+}
+.ranks h2 {
+  color: #F5F5F5;
+  font-weight: 700;
+  font-size: 26px;
+}
+.ranks .smth {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.ranks .smth p {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: #F5F5F5;
+}
+.ranks .smth .selected {
+  font-weight: 600;
+  font-size: 21px;
+  color: #F5F5F5;
+}
+.ranks .smth div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ranks .smth div h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #EBEBEB;
+}
+.ranks .smth div p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #F5F5F5;
+}
+.ranks .smth div .progressbar {
+  width: 550px;
+  height: 30px;
+  border-radius: 15px;
+  background: #3B3F3F;
+}
+
+/*# sourceMappingURL=ranks.css.map */

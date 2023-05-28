@@ -8,7 +8,9 @@ const MarkerModalForm = (props) => {
                 <p>Категорія:{props.data.category}</p>
                 <p>Створенно:{props.data.createdAt}</p>
                 <h3>Годин:{props.data.hours}/год</h3>
-                <AiOutlineCloseCircle/>
+                <button onClick={()=> props.onClose()}>
+                    <AiOutlineCloseCircle />
+                </button>
             </div>
         )
     }else {

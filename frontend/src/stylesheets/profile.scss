@@ -1,0 +1,178 @@
+.container__profile {
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  align-items: center;
+  margin: 0;
+}
+
+/*=====About=====*/
+
+.about__me {
+  margin-top: 125px;
+  width: 100%;
+  height: 90px;
+  border-bottom: solid 1px #fff;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.about__me h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.about__me p {
+  margin: 0;
+  color: #fff;
+}
+
+.about__me span {
+  margin: 0;
+  color: #fff;
+}
+
+.about__me img {
+  width: 90px;
+  height: 90px;
+}
+
+.about--info {
+  flex-direction: column;
+  margin-left: 20px;
+  gap: 10px;
+  justify-content: center;
+}
+
+/*=====progressAndHours=====*/
+.progressAndHours {
+  height: 150px;
+  width: 100%;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.progress {
+  background-color: #3B3F3F;
+  border-radius: 20px;
+  width: 45%;
+  height: 150px;
+}
+
+.hours {
+  background-color: #3B3F3F;
+  border-radius: 20px;
+  width: 55%;
+  height: 150px;
+}
+
+/*=====history=====*/
+.history {
+  margin-top: 50px;
+  height: 150px;
+  width: 100%;
+}
+
+.history__item {
+  height: 150px;
+  background-color: #3B3F3F;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.footer {
+  margin: 20px;
+  height: 150px;
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.footer img {
+  height: 40px;
+}
+
+.footer h1 {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 10px;
+  margin: 0;
+}
+
+.footer--icons {
+  gap: 20px;
+
+}
+
+.footer p {
+  color: #fff;
+  margin: 0;
+}
+
+
+/*=====Media=====*/
+@media screen and (max-width: 800px) {
+  .header {
+    display: none;
+  }
+
+  .progressAndHours {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    height: 300px;
+  }
+
+  .progress {
+    background-color: #3B3F3F;
+    width: 100%;
+    height: 150px;
+  }
+
+  .hours {
+    background-color: #3B3F3F;
+    width: 100%;
+    height: 150px;
+  }
+
+  .history {
+    margin-top: 20px;
+  }
+}
+.AvatarRoot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow: hidden;
+  user-select: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: #000;
+}
+
+.AvatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.AvatarFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #000;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+}
