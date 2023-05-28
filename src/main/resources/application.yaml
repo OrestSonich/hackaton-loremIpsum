@@ -10,8 +10,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: sonich.edu@gmail.com
-    password: Jhtcn20051600500
-    protocol: smtp
+    password: umnrvgjzzsfohitg
     properties.mail.smtp:
       auth: true
       starttls.enable: true
