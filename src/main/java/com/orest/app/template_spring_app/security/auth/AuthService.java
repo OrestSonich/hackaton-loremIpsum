@@ -1,6 +1,8 @@
 package com.orest.app.template_spring_app.security.auth;
 
+import com.orest.app.template_spring_app.entity.RangEntity;
 import com.orest.app.template_spring_app.entity.UserEntity;
+import com.orest.app.template_spring_app.enums.RangEnum;
 import com.orest.app.template_spring_app.enums.RolesEnum;
 import com.orest.app.template_spring_app.exception.EmailAreBusyException;
 import com.orest.app.template_spring_app.repository.UserRepo;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -35,6 +38,7 @@ public class AuthService {
                 .age(request.getAge())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(RolesEnum.USER)
+                .rangs(List.of(new RangEntity(RangEnum.BEGINNER_VOLUNTEER)))
                 .createdAt(Date.valueOf(LocalDate.now()))
                 .build();
         repository.save(user);

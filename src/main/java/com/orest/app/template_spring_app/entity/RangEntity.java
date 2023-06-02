@@ -25,4 +25,8 @@ public class RangEntity {
     private UserEntity owner;
     private Date createdAt;
     private Date updatedAt;
+
+    public RangEntity(RangEnum rang) {
+        this.rang = rang;
+    }
 }
