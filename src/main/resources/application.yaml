@@ -1,9 +1,9 @@
 ##
 spring:
   datasource:
-    url: ${JDBC_DATABASE_URL:jdbc:postgresql://containers-us-west-41.railway.app:6596/postgres}
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://containers-us-west-117.railway.app:5807/railway}
     username: ${JDBC_DATABASE_USERNAME:postgres}
-    password: ${JDBC_DATABASE_PASSWORD:6XAJ1beLIGcMipQM44nX}
+    password: ${JDBC_DATABASE_PASSWORD:jqanKALEAVN3NdPw9yh1}
     driver-class-name: org.postgresql.Driver
 ##
   mail:
@@ -16,7 +16,7 @@ spring:
       starttls.enable: true
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
       naming:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
